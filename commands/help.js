@@ -2,14 +2,17 @@ const config = require("../config.json");
 const commands = require("../scripts/CommandsReader")(config.prefix);
 
 const descriptions = {
-    "*help": "Use esse comando para ver os comandos disponiveis"
+    "*help": "Use esse comando para ver os comandos disponiveis",
+    "*aviso": "Avise as pessoas do server",
+    "*clear": "Limpe o chat",
+    "*ping":  "Pingue o bot"
 };
 
 module.exports = (client, msg) => {
   var text = "Comandos: \n";
 
   Object.keys(commands).forEach(command => {
-    text += `\n ${command}: ${descriptions[command] ? descriptions[command] : 'Sem descrição'}`
+    text += `\n ${command}`
   });
   msg.reply(text);
 };

@@ -6,4 +6,5 @@ module.exports = async (client, msg) => {
   await channel.bulkDelete(fetchMessages);
 
   msg.reply(`Apagou ${fetchMessages.size} menssagens`);
+  
 }
