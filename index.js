@@ -34,13 +34,13 @@ client.on("message", (msg) => {
 
   if (!msg.author.bot) {
     if (msg.content == 'bom dia') {
-      msg.reply(`Bom dia ${msg.author.username}`);
+      msg.reply(`Bom dia`);
     }
     else if (msg.content == 'boa tarde') {
-      msg.reply(`Boa tarde ${msg.author.username}`);
+      msg.reply(`Boa tarde`);
     }
     else if (msg.content == 'boa noite') {
-      msg.reply(`Boa noite ${msg.author.username}`);
+      msg.reply(`Boa noite`);
     }
   }
 });
