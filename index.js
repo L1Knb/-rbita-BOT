@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-
 app.get("/", (request, response) => {
   const ping = new Date();
   ping.setHours(ping.getHours() - 3);
@@ -9,13 +8,60 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 
-const Discord = require("discord.js");
-
+const Discord = require ('discord.js');
 const client = new Discord.Client();
 
 const config = require("./config.json");
-client.on("ready", ()=>console.log("READY"));
-const welcome = require("./welcome");
-welcome(client);   
+const commands  = require("./scripts/CommandsReader")(config.prefix);
+const unknowCommand = require("./scripts/unknowCommand");
+const permissions = config.permissions;
 
-client.login(process.env.TOKEN);
+client.on("ready", () =>{
+  console.log(`Logado com o bot ${client.user.tag}`);
+});
+
+client.on("message", (msg) => {
+
+  if(!msg.author.bot && msg.guild){
+        if(config.debug) console.log(`${msg.author.username}: ${msg.content}`);
+        const args = msg.content.split(" ");
+        if(commands[args[0]]){
+            if(verificarPermissao(msg.member,args[0]))
+                commands[args[0]](client,msg, args);
+            else msg.reply("você não tem permissão para executar esse comando!");
+        }else if(args[0].startsWith(config.prefix)) unknowCommand(client,msg);
+    }
+
+  if (!msg.author.bot) {
+    if (msg.content == 'bom dia') {
+      msg.reply(`Bom dia ${msg.author.username}`);
+    }
+    else if (msg.content == 'boa tarde') {
+      msg.reply(`Boa tarde ${msg.author.username}`);
+    }
+    else if (msg.content == 'boa noite') {
+      msg.reply(`Boa noite ${msg.author.username}`);
+    }
+  }
+});
+
+function verificarPermissao(member,command){
+    let verification = !permissions[command];
+    if(!verification){
+        const perms = permissions[command];
+        perms.forEach(p =>{
+            switch(p.type){
+                case "role":
+                    if(member.roles.cache.has(p.value)) verification = true;
+                break;
+                case "permission":
+                    if(member.permissions.has(p.value)) verification = true;
+                break;
+            }
+        });
+    }
+    return verification;
+}
+
+client.login(process.env.TOKEN);;
+
