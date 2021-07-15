@@ -12,7 +12,7 @@ module.exports = (client, msg) => {
   var text = "Comandos: \n";
 
   Object.keys(commands).forEach(command => {
-    text += `\n ${command}`
+    text += `\n ${command}: ${descriptions[command] ? descriptions[command] : 'Não tem descrição'}`
   });
   msg.reply(text);
 };

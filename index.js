@@ -36,10 +36,19 @@ client.on("message", (msg) => {
     if (msg.content == 'bom dia') {
       msg.reply(`Bom dia`);
     }
+    else if (msg.content == 'Bom dia') {
+      msg.reply(`Bom dia`);
+    }
     else if (msg.content == 'boa tarde') {
       msg.reply(`Boa tarde`);
     }
+    else if (msg.content == 'Boa tarde') {
+      msg.reply(`Boa tarde`);
+    }
     else if (msg.content == 'boa noite') {
+      msg.reply(`Boa noite`);
+    }
+    else if (msg.content == 'Boa noite') {
       msg.reply(`Boa noite`);
     }
   }
@@ -51,8 +60,8 @@ client.on("guildMemberAdd",(member)=>{
     member.send("Bem vindo ao nosso servidor\nSe divirta 😃");
 });
 client.on("guildMemberRemove",(member)=>{
-    const boasVindasChannel = member.guild.channels.cache.find(channel=>channel.id == config.boasVindasChannelId);
-    boasVindasChannel.send(`${member.user} saiu do server :( awwww 😔`);
+    const boasVindasChannel = member.guild.channels.cache.find(channel=>channel.id == config.despedidasChannelId);
+    boasVindasChannel.send(`${member.user} saiu do server`);
 });
 
 
@@ -74,5 +83,5 @@ function verificarPermissao(member,command){
     return verification;
 }
 
-client.login(process.env.TOKEN);;
+client.login(process.env.TOKEN);
 
