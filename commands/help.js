@@ -1,20 +1,24 @@
 const config = require("../config.json");
 const commands = require("../scripts/CommandsReader")(config.prefix);
 
-const descriptions = {
-    "*help": "Use esse comando para ver os comandos disponiveis",
-    "*aviso": "Avise as pessoas do server",
-    "*clear": "Limpe o chat",
-    "*ping":  "Pingue o bot"
-};
+const Discord = require('discord.js');
 
-module.exports = (client, msg) => {
-  var text = "Comandos: \n";
+  const avisoEmbed = new Discord.MessageEmbed()
+	.setColor('#483D8B')
+	.setTitle('Comandos:')
+	.setAuthor(`Órbita Server`,)
+	.setThumbnail('https://i.imgur.com/6Z4L1qv.jpg')
+	.addFields(
+    {name: '*help', value: 'Use esse comando para ver os comandos disponiveis'},
+    {name: '*aviso', value: 'Avise as pessoas do server'},
+    {name: '*filme', value: 'Cria um template para o filme'},
+    {name: '*clear', value: 'Limpe o chat'},
+    {name: '*ping', value: 'Pingue o bot'},
+	)
+	.setTimestamp()
+	.setFooter('Órbita Server');
 
-  Object.keys(commands).forEach(command => {
-    text += `\n ${command}: ${descriptions[command] ? descriptions[command] : 'Não tem descrição'}`
-  });
-  msg.reply(text);
+  msg.reply(avisoEmbed);
 };
 
 
