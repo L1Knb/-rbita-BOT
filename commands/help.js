@@ -2,7 +2,7 @@ const config = require("../config.json");
 const commands = require("../scripts/CommandsReader")(config.prefix);
 
 const Discord = require('discord.js');
-
+module.exports = (client, msg) => {
   const avisoEmbed = new Discord.MessageEmbed()
 	.setColor('#483D8B')
 	.setTitle('Comandos:')
@@ -10,9 +10,6 @@ const Discord = require('discord.js');
 	.setThumbnail('https://i.imgur.com/6Z4L1qv.jpg')
 	.addFields(
     {name: '*help', value: 'Use esse comando para ver os comandos disponiveis'},
-    {name: '*aviso', value: 'Avise as pessoas do server'},
-    {name: '*filme', value: 'Cria um template para o filme'},
-    {name: '*clear', value: 'Limpe o chat'},
     {name: '*ping', value: 'Pingue o bot'},
 	)
 	.setTimestamp()
