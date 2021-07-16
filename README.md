@@ -2,7 +2,7 @@
 <p align="center">Bot para o servidor discord Órbita, boatos de ser o melhor do BR</p>
 
 <h4 align="center"> 
-	🚧  React Select 🚀 Em construção...  🚧
+	🚧  Em construção...  🚧
 </h4>
 
 ### Features
