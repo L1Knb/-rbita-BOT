@@ -1,0 +1,25 @@
+{
+    "debug": true,
+    "prefix": "*",
+
+    "avisosChannelId": "813509899446124545",
+    "boasVindasChannelId": "813509843360284713",
+    "rulesChannelId": "813509859252240424",
+    "tagsChannelId": "813509888533331968",
+    "tagsAddChannelId": "853704113668489261",
+
+    "permissions":{
+        "*aviso":[
+            {
+                "type": "role",
+                "value": "866025649897603083"
+            }
+        ],
+        "*clear":[
+            {
+                "type": "permission",
+                "value": "ADMINISTRATOR"
+            }
+        ]
+    }
+}
