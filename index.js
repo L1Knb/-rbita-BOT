@@ -43,7 +43,7 @@ client.on("message", (msg) => {
       msg.reply(`Bom dia`);
     }
     else if (msg.content == 'BOM DIA') {
-      msg.reply(`Bom dia`);
+      msg.reply(`BOM DIA VAGABUNDO`);
     }
     else if (msg.content == 'boa tarde') {
       msg.reply(`Boa tarde`);
@@ -52,7 +52,7 @@ client.on("message", (msg) => {
       msg.reply(`Boa tarde`);
     }
     else if (msg.content == 'BOA TARDE') {
-      msg.reply(`Boa tarde`);
+      msg.reply(`BOA TARDE PORRA`);
     }
     else if (msg.content == 'boa noite') {
       msg.reply(`Boa noite`);
@@ -61,7 +61,7 @@ client.on("message", (msg) => {
       msg.reply(`Boa noite`);
     }
     else if (msg.content == 'BOA NOITE') {
-      msg.reply(`Boa noite`);
+      msg.reply(`BOA NOITE CARALHO`);
     }
   }
 });
