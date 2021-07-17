@@ -16,8 +16,11 @@ const commands  = require("./scripts/CommandsReader")(config.prefix);
 const unknowCommand = require("./scripts/unknowCommand");
 const permissions = config.permissions;
 
+const welcome = require("./welcome.js");
+
 client.on("ready", () =>{
   console.log(`Logado com o bot ${client.user.tag}`);
+  welcome(client);
 });
 
 client.on("message", (msg) => {
@@ -39,10 +42,16 @@ client.on("message", (msg) => {
     else if (msg.content == 'Bom dia') {
       msg.reply(`Bom dia`);
     }
+    else if (msg.content == 'BOM DIA') {
+      msg.reply(`Bom dia`);
+    }
     else if (msg.content == 'boa tarde') {
       msg.reply(`Boa tarde`);
     }
     else if (msg.content == 'Boa tarde') {
+      msg.reply(`Boa tarde`);
+    }
+    else if (msg.content == 'BOA TARDE') {
       msg.reply(`Boa tarde`);
     }
     else if (msg.content == 'boa noite') {
@@ -51,18 +60,12 @@ client.on("message", (msg) => {
     else if (msg.content == 'Boa noite') {
       msg.reply(`Boa noite`);
     }
+    else if (msg.content == 'BOA NOITE') {
+      msg.reply(`Boa noite`);
+    }
   }
 });
 
-client.on("guildMemberAdd",(member)=>{
-    const boasVindasChannel = member.guild.channels.cache.find(channel=>channel.id == config.boasVindasChannelId);
-    boasVindasChannel.send(`${member.user} acabou de entrar em nosso servidor :P yey`);
-    member.send("Bem vindo ao nosso servidor\nSe divirta 😃");
-});
-client.on("guildMemberRemove",(member)=>{
-    const boasVindasChannel = member.guild.channels.cache.find(channel=>channel.id == config.despedidasChannelId);
-    boasVindasChannel.send(`${member.user} saiu do server`);
-});
 
 
 function verificarPermissao(member,command){

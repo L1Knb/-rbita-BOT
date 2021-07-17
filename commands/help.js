@@ -11,6 +11,7 @@ module.exports = (client, msg) => {
 	.addFields(
     {name: '*help', value: 'Use esse comando para ver os comandos disponiveis'},
     {name: '*ping', value: 'Pingue o bot'},
+    {name: '*aviso', value: 'Avisa a galera (**mods only**)'}
 	)
 	.setTimestamp()
 	.setFooter('Órbita Server');

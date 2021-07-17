@@ -9,6 +9,6 @@
 
 - [x] Saudações a usuários
 - [x] Comandos por chat
-- [ ] Boas vindas
+- [x] Boas vindas
 - [ ] Criação de embeds para avisos
 - [ ] Gerenciar convites, membros e cargos

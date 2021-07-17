@@ -6,6 +6,6 @@ module.exports = async (client,msg) =>{
     var message = msg.content.split(" ");
     message.splice(0,1);
     message = message.join(" ");
-    await avisoChannel.send(`@everyone\n ${message}`);
+    await avisoChannel.send(`@everyone \n${message}`);
     msg.reply(`Avisado no canal ${avisoChannel}`);
 }
