@@ -15,7 +15,7 @@ const config = require("./config.json");
 const commands  = require("./scripts/CommandsReader")(config.prefix);
 const unknowCommand = require("./scripts/unknowCommand");
 const permissions = config.permissions;
-
+const venId = config.VenId;
 const welcome = require("./welcome.js");
 
 client.on("ready", () =>{
@@ -63,7 +63,18 @@ client.on("message", (msg) => {
     else if (msg.content == 'BOA NOITE') {
       msg.reply(`BOA NOITE CARALHO`);
     }
-     
+    else if (msg.content == 'oi') {
+      msg.reply(`oiiieeee :3 (oi cringe)`);
+    }
+    else if (msg.content == 'é sobre isso') {
+      msg.reply(`LACROU MANXXX???`);
+    }
+    else if (msg.content == 'F') {
+      msg.reply(`F`);
+    }
+     else if (msg.content == 'gabriel pereira') {
+      msg.channel.send(`<@${venId}>, queria saber se sua mãe está solteira`);;
+    }
   }
 });
 
