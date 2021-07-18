@@ -11,12 +11,18 @@ module.exports = (client, msg) => {
 	.addFields(
     {name: '*help', value: 'Use esse comando para ver os comandos disponiveis'},
     {name: '*ping', value: 'Pingue o bot'},
-    {name: '*aviso', value: 'Avisa a galera (**mods only**)'}
+    {name: '*aviso', value: 'Avisa a galera (**mods only**)'},
+    {name: '*orbitancap', value: 'Link da live orbitancap'},
+    {name: '*duduxqx', value: 'Link da live duduxqx'},
+    {name: '*marcikass', value: 'Link da live marcikass'},
+    {name: '*egirlancap', value: 'Link da live egirlancap'},
 	)
 	.setTimestamp()
 	.setFooter('Órbita Server');
 
   msg.reply(avisoEmbed);
+
+  
 };
 
 
@@ -35,6 +41,7 @@ function verificarPermissao(member,command){
                 case "permission":
                     if(member.permissions.has(p.value)) verification = true;
                 break;
+               
             }
         });
     }

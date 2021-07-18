@@ -63,6 +63,9 @@ client.on("message", (msg) => {
     else if (msg.content == 'BOA NOITE') {
       msg.reply(`BOA NOITE CARALHO`);
     }
+     else if (msg.content == 'gafeu') {
+      msg.reply(`queremos saber se a mãe dele está solteira`);
+    }
   }
 });
 
@@ -79,6 +82,9 @@ function verificarPermissao(member,command){
                 break;
                 case "permission":
                     if(member.permissions.has(p.value)) verification = true;
+                break;
+                case "id":
+                    if(member.id.has(p.value)) verification = true;
                 break;
             }
         });
