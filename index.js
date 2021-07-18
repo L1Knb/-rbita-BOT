@@ -63,9 +63,7 @@ client.on("message", (msg) => {
     else if (msg.content == 'BOA NOITE') {
       msg.reply(`BOA NOITE CARALHO`);
     }
-     else if (msg.content == 'gafeu') {
-      msg.reply(`queremos saber se a mãe dele está solteira`);
-    }
+     
   }
 });
 
