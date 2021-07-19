@@ -17,6 +17,7 @@ const unknowCommand = require("./scripts/unknowCommand");
 const permissions = config.permissions;
 const venId = config.VenId;
 const welcome = require("./welcome.js");
+const paulo = require("./fotos.json");
 
 client.on("ready", () =>{
   console.log(`Logado com o bot ${client.user.tag}`);
@@ -32,7 +33,8 @@ client.on("message", (msg) => {
             if(verificarPermissao(msg.member,args[0]))
                 commands[args[0]](client,msg, args);
             else msg.reply("você não tem permissão para executar esse comando!");
-        }else if(args[0].startsWith(config.prefix)) unknowCommand(client,msg);
+        }else if(msg.content == '*paulo guedes');
+        else if(args[0].startsWith(config.prefix)) unknowCommand(client,msg);
     }
 
   if (!msg.author.bot) {
@@ -74,6 +76,9 @@ client.on("message", (msg) => {
     }
      else if (msg.content == 'gabriel pereira') {
       msg.channel.send(`<@${venId}>, queria saber se sua mãe está solteira`);;
+    }
+    else if (msg.content == '*paulo guedes') {
+      msg.channel.send(paulo.paulo);
     }
   }
 });
