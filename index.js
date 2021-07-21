@@ -38,6 +38,27 @@ client.on("message", (msg) => {
     }
 
   if (!msg.author.bot) {
+    if (msg.content == 'Oi')
+      {
+        if  (msg.member.id == config.L1Id)
+        {
+          msg.channel.send(`olá L1 como você esta?`);     
+        }
+        else 
+        {
+          msg.reply(`Você não é o L1 😡`);
+        }
+        
+      }
+      if (msg.content == 'bem') 
+      {
+        if  (msg.member.id == config.L1Id) 
+        {
+          msg.channel.send(`que bomm 😘`);
+        }
+               
+      }
+
     if (msg.content == 'bom dia') {
       msg.reply(`Bom dia`);
     }
@@ -72,13 +93,16 @@ client.on("message", (msg) => {
       msg.reply(`LACROU MANXXX???`);
     }
     else if (msg.content == 'F') {
-      msg.reply(`F`);
+      msg.channel.send(`F`);
     }
      else if (msg.content == 'gabriel pereira') {
       msg.channel.send(`<@${venId}>, queria saber se sua mãe está solteira`);;
     }
     else if (msg.content == '*paulo guedes') {
       msg.channel.send(paulo.paulo);
+    }
+    else if (msg.content == 'de quem o Órbita gosta?') {
+      msg.channel.send(`Só amo o <@${config.L1Id}> o resto odeio todos`);
     }
   }
 });

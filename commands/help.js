@@ -18,7 +18,7 @@ module.exports = (client, msg) => {
     {name: '*egirlancap', value: 'Link da live egirlancap'},
 	)
 	.setTimestamp()
-	.setFooter('Órbita Server');
+	.setFooter('Órbita Server - BOT made by L1');
 
   msg.reply(avisoEmbed);
 
