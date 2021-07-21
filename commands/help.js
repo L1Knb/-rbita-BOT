@@ -11,7 +11,7 @@ module.exports = (client, msg) => {
 	.addFields(
     {name: '*help', value: 'Use esse comando para ver os comandos disponiveis'},
     {name: '*ping', value: 'Pingue o bot'},
-    {name: '*aviso', value: 'Avisa a galera (**mods only**)'},
+    {name: '*say', value: 'Faz o bot falar (**mods only**)'},
     {name: '*orbitancap', value: 'Link da live orbitancap'},
     {name: '*duduxqx', value: 'Link da live duduxqx'},
     {name: '*marcikass', value: 'Link da live marcikass'},
