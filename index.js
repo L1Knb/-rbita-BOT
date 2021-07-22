@@ -22,6 +22,7 @@ const paulo = require("./fotos.json");
 client.on("ready", () =>{
   console.log(`Logado com o bot ${client.user.tag}`);
   welcome(client);
+  
 });
 
 client.on("message", (msg) => {

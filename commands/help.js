@@ -22,6 +22,7 @@ module.exports = (client, msg) => {
 
   msg.reply(avisoEmbed);
 
+  //msg.member.roles.remove('813534457696354304');
   
 };
 

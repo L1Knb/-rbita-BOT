@@ -19,7 +19,7 @@ module.exports = (client, member) => {
 	  .setFooter('Órbita Server');
 
     const channel = member.guild.channels.cache.get(channelId);
-    channel.send(embed);
+    channel.send(`<@${member.id}>`, embed);
   });
 };
 
