@@ -1,8 +1,9 @@
-const config = require("../config.json");
+const config   = require("../config.json");
 const commands = require("../scripts/CommandsReader")(config.prefix);
 
-const Discord = require('discord.js');
-module.exports = (client, msg) => {
+const Discord  = require('discord.js');
+module.exports = (client, msg) => 
+{
   const avisoEmbed = new Discord.MessageEmbed()
 	.setColor('#483D8B')
 	.setTitle('Comandos:')
@@ -21,8 +22,6 @@ module.exports = (client, msg) => {
 	.setFooter('Órbita Server - BOT made by L1');
 
   msg.reply(avisoEmbed);
-
-  //msg.member.roles.remove('813534457696354304');
   
 };
 
@@ -30,15 +29,20 @@ module.exports = (client, msg) => {
 
 const permissions = config.permissions;
 
-function verificarPermissao(member,command){
+function verificarPermissao(member,command)
+{
     let verification = !permissions[command];
-    if(!verification){
+    if(!verification)
+    {
         const perms = permissions[command];
-        perms.forEach(p =>{
-            switch(p.type){
+        perms.forEach(p =>
+        {
+            switch(p.type)
+            {
                 case "role":
                     if(member.roles.cache.has(p.value)) verification = true;
                 break;
+                
                 case "permission":
                     if(member.permissions.has(p.value)) verification = true;
                 break;

@@ -1,13 +1,15 @@
-const Discord = require("discord.js");
-const config = require("./config.json");
+const Discord          = require("discord.js");
+const config           = require("../config.json");
 
-module.exports = (client, member) => {
-  const channelId = config.boasVindasChannelId;
-  const rulesChannel = config.rulesChannelId;
-  const tagsChannel = config.tagsChannelId;
+module.exports = (client, member) => 
+{
+  const channelId      = config.boasVindasChannelId;
+  const rulesChannel   = config.rulesChannelId;
+  const tagsChannel    = config.tagsChannelId;
   const tagsAddChannel = config.tagsAddChannelId;
 
-  client.on("guildMemberAdd", (member) => {
+  client.on("guildMemberAdd", (member) => 
+  {
     console.log(member);
     
   const embed = new Discord.MessageEmbed()
@@ -18,7 +20,7 @@ module.exports = (client, member) => {
     .setTimestamp()
 	  .setFooter('Órbita Server');
 
-    const channel = member.guild.channels.cache.get(channelId);
+    const channel     = member.guild.channels.cache.get(channelId);
     channel.send(`<@${member.id}>`, embed);
   });
 };
