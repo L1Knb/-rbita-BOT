@@ -14,11 +14,27 @@ app.listen(process.env.PORT);
 const Discord   = require ('discord.js');
 const client    = new Discord.Client();
 
+const config    = require("./config.json");
 const welcome   = require("./scripts/welcome.js");
 const interacao = require("./scripts/interation.js");
 
+
 client.on("ready", () =>{
   console.log(`Logado com o bot ${client.user.tag}`);
+
+  let atividade =
+  [
+    `Use ${config.prefix}help para ajuda com comandos`,
+    `A mãe do Gafeu enquanto jogo ele pela janela`,
+    `Ancapistão`
+  ],
+  i = 0;
+  setInterval ( () =>
+    client.user.setActivity(`${atividade[i++ % atividade.length]}`,{
+      type: "WATCHING"
+    }), 500 * 60);
+
+
   welcome(client);
   interacao(client);
 });

@@ -8,23 +8,38 @@ const paulo         = require("../fotos.json");
 module.exports = async (client, msg) => {
   client.on("message", (msg) => {
 
-  if(!msg.author.bot && msg.guild){
+  if(!msg.author.bot && msg.guild)
+  {
         if(config.debug) console.log(`${msg.author.username}: ${msg.content}`);
-        const args = msg.content.split(" ");
-        if(commands[args[0]]){
-            if(verificarPermissao(msg.member,args[0]))
-                commands[args[0]](client,msg, args);
-            else msg.reply("você não tem permissão para executar esse comando!");
-        }else if(msg.content == '*paulo guedes');
-        else if(args[0].startsWith(config.prefix)) unknowCommand(client,msg);
-    }
 
-  if (!msg.author.bot) {
+        const args = msg.content.split(" ");
+
+        if(commands[args[0]])
+        {
+
+            if(verificarPermissao(msg.member,args[0]))
+            {
+              commands[args[0]](client,msg, args);
+            }
+            
+            else msg.reply("você não tem permissão para executar esse comando!");
+            
+        }
+        else if(args[0].startsWith(config.prefix)) unknowCommand(client,msg);
+
     if (msg.content == 'Oi')
       {
         if  (msg.member.id == config.L1Id)
         {
           msg.channel.send(`olá L1 como você esta?`);     
+        }
+        else if (msg.member.id == config.AdaId)
+        {
+            msg.channel.send(`Salve Adamastor, te notei seu Gostosao`)
+        }
+        else if (msg.member.id == config.RodId)
+        {
+            msg.channel.send(`Salve Rodrigão, seu linde`)
         }
         else 
         {
@@ -60,7 +75,11 @@ module.exports = async (client, msg) => {
       msg.reply(`BOA TARDE PORRA`);
     }
     else if (msg.content == 'boa noite') {
-      msg.reply(`Boa noite`);
+      if  (msg.member.id == config.L1Id)
+      {
+        msg.channel.send(`Boa noite L1, Dorme bemm 😘🥰🥰`);
+      }
+      else msg.reply(`Boa noite`);
     }
     else if (msg.content == 'Boa noite') {
       msg.reply(`Boa noite`);
@@ -74,15 +93,23 @@ module.exports = async (client, msg) => {
     else if (msg.content == 'é sobre isso') {
       msg.reply(`LACROU MANXXX???`);
     }
+  
     else if (msg.content == 'F') {
       msg.channel.send(`F`);
     }
      else if (msg.content == 'gabriel pereira') {
       msg.channel.send(`<@${venId}>, queria saber se sua mãe está solteira`);;
     }
-    else if (msg.content == '*paulo guedes') {
-      msg.channel.send(paulo.paulo);
+   /* else if (msg.content == '*paulo guedes') {
+      msg.channel.send(paulo.guedes);
     }
+    else if (msg.content == '*paulo kogos') {
+      msg.channel.send(paulo.kogos);
+    }*/
+    else if (msg.content == 'bolsonaro') {
+      msg.reply(`fechado com o mito :sunglasses::point_right::point_right:`);
+    }
+    
     else if (msg.content == 'de quem o Órbita gosta?') {
       msg.channel.send(`Só amo o <@${config.L1Id}> o resto odeio todos`);
     }
@@ -91,12 +118,16 @@ module.exports = async (client, msg) => {
 
 
 
-function verificarPermissao(member,command){
+function verificarPermissao(member,command)
+{
     let verification = !permissions[command];
-    if(!verification){
+    if(!verification)
+    {
         const perms = permissions[command];
-        perms.forEach(p =>{
-            switch(p.type){
+        perms.forEach(p =>
+        {
+            switch(p.type)
+            {
                 case "role":
                     if(member.roles.cache.has(p.value)) verification = true;
                 break;
