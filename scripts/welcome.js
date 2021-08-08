@@ -16,7 +16,7 @@ module.exports = (client, member) =>
     .setColor('#483D8B')
     .setThumbnail(member.user.avatarURL())
     .setDescription(`Seja bem-vindo ao Órbita, <@${member.id}> \n Para ter acesso ao server completo, passe no canal  ${member.guild.channels.cache.get(rulesChannel).toString()} e ${member.guild.channels.cache.get(tagsChannel).toString()}`)
-    .setImage("https://i.imgur.com/gvf8PAl.png")
+    .setImage("https://cdn.discordapp.com/attachments/872245099663360010/872245595769815040/gvf8PAl.png")
     .setTimestamp()
 	  .setFooter('Órbita Server');
 

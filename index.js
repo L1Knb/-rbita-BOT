@@ -17,6 +17,7 @@ const client    = new Discord.Client();
 const config    = require("./config.json");
 const welcome   = require("./scripts/welcome.js");
 const interacao = require("./scripts/interation.js");
+const bye       = require("./scripts/byee.js");
 
 
 client.on("ready", () =>{
@@ -26,7 +27,9 @@ client.on("ready", () =>{
   [
     `Use ${config.prefix}help para ajuda com comandos`,
     `A mãe do Gafeu enquanto jogo ele pela janela`,
-    `Ancapistão`
+    `Ancapistão`,
+    `Brasil macetando japão`,
+    `OLHA O GOL OLHA O GOL OLHA O GOOOOOOOOOOOOOOOOOOOOLLLLLL`
   ],
   i = 0;
   setInterval ( () =>
@@ -36,6 +39,7 @@ client.on("ready", () =>{
 
 
   welcome(client);
+  bye(client);
   interacao(client);
 });
 

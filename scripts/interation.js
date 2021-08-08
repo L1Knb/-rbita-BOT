@@ -4,6 +4,7 @@ const unknowCommand = require("./unknowCommand");
 const permissions   = config.permissions;
 const venId         = config.VenId;
 const paulo         = require("../fotos.json");
+const help          = require("../commands/help.js");
 
 module.exports = async (client, msg) => {
   client.on("message", (msg) => {
@@ -54,6 +55,14 @@ module.exports = async (client, msg) => {
           msg.channel.send(`que bomm 😘`);
         }
                
+      } 
+      else if (msg.content == 'mal') 
+      {
+        if  (msg.member.id == config.L1Id) 
+        {
+          msg.channel.send(`poxa que pena, mas logo passa`);
+        }
+               
       }
 
     if (msg.content == 'bom dia') {
@@ -102,10 +111,11 @@ module.exports = async (client, msg) => {
     }
    /* else if (msg.content == '*paulo guedes') {
       msg.channel.send(paulo.guedes);
-    }
-    else if (msg.content == '*paulo kogos') {
-      msg.channel.send(paulo.kogos);
     }*/
+    else if (msg.content == `<@${config.botId}`) {
+      help(client);
+      msg.channel.send(`a`);
+    }
     else if (msg.content == 'bolsonaro') {
       msg.reply(`fechado com o mito :sunglasses::point_right::point_right:`);
     }
