@@ -7,4 +7,6 @@ module.exports  = async (client,msg) =>
   const y       = Math.floor(msg.createdTimestamp);      
   console.log(x,y);
   message.edit(`🏓 Pong!  📡 Ping: ${Math.floor(x-y)}ms`);
+
+  
 }

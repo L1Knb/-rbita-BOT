@@ -17,6 +17,6 @@ module.exports    = (client, member) =>
 
     const channelId   = config.ejetadosChannelId;
     const channel     = member.guild.channels.cache.get(channelId);
-    channel.send(`${member.user} saiu do server`, embed);
+    channel.send(`${member.user.username} saiu do server`, embed);
   });
 }  

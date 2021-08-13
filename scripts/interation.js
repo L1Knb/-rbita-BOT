@@ -28,7 +28,7 @@ module.exports = async (client, msg) => {
         }
         else if(args[0].startsWith(config.prefix)) unknowCommand(client,msg);
 
-    if (msg.content == 'Oi')
+   /* if (msg.content == 'Oi')
       {
         if  (msg.member.id == config.L1Id)
         {
@@ -47,7 +47,7 @@ module.exports = async (client, msg) => {
           msg.reply(`Você não é o L1 😡`);
         }
         
-      }
+      }*/
       if (msg.content == 'bem') 
       {
         if  (msg.member.id == config.L1Id) 
@@ -65,62 +65,67 @@ module.exports = async (client, msg) => {
                
       }
 
-    if (msg.content == 'bom dia') {
-      msg.reply(`Bom dia`);
-    }
-    else if (msg.content == 'Bom dia') {
-      msg.reply(`Bom dia`);
-    }
-    else if (msg.content == 'BOM DIA') {
+    if (msg.content == 'BOM DIA') {
       msg.reply(`BOM DIA VAGABUNDO`);
     }
-    else if (msg.content == 'boa tarde') {
-      msg.reply(`Boa tarde`);
-    }
-    else if (msg.content == 'Boa tarde') {
-      msg.reply(`Boa tarde`);
-    }
+
     else if (msg.content == 'BOA TARDE') {
       msg.reply(`BOA TARDE PORRA`);
     }
-    else if (msg.content == 'boa noite') {
-      if  (msg.member.id == config.L1Id)
-      {
-        msg.channel.send(`Boa noite L1, Dorme bemm 😘🥰🥰`);
-      }
-      else msg.reply(`Boa noite`);
-    }
-    else if (msg.content == 'Boa noite') {
-      msg.reply(`Boa noite`);
-    }
+
     else if (msg.content == 'BOA NOITE') {
       msg.reply(`BOA NOITE CARALHO`);
     }
-    else if (msg.content == 'oi') {
+
+    else {
+
+      const menssagem = msg.content.toLowerCase();
+
+      if (menssagem == 'oi') {
       msg.reply(`oiiieeee :3 (oi cringe)`);
     }
-    else if (msg.content == 'é sobre isso') {
+  
+      if (menssagem == 'bom dia') {
+        msg.reply(`Bom dia`);
+      }
+  
+      else if (menssagem == 'boa tarde') {
+        msg.reply(`Boa tarde`);
+      }
+    
+      else if (menssagem == 'boa noite') {
+        if  (msg.member.id == config.L1Id)
+        {
+          msg.channel.send(`Boa noite L1, Dorme bemm 😘🥰🥰`);
+        }
+      else msg.reply(`Boa noite`);
+      }
+
+    }
+
+    
+     if (msg.content == 'é sobre isso') {
       msg.reply(`LACROU MANXXX???`);
     }
   
-    else if (msg.content == 'F') {
+     if (msg.content == 'F') {
       msg.channel.send(`F`);
     }
-     else if (msg.content == 'gabriel pereira') {
+      if (msg.content == 'gabriel pereira') {
       msg.channel.send(`<@${venId}>, queria saber se sua mãe está solteira`);;
     }
    /* else if (msg.content == '*paulo guedes') {
       msg.channel.send(paulo.guedes);
     }*/
-    else if (msg.content == `<@${config.botId}`) {
+     if (msg.content == `<@${config.botId}`) {
       help(client);
       msg.channel.send(`a`);
     }
-    else if (msg.content == 'bolsonaro') {
+     if (msg.content == 'bolsonaro') {
       msg.reply(`fechado com o mito :sunglasses::point_right::point_right:`);
     }
     
-    else if (msg.content == 'de quem o Órbita gosta?') {
+     if (msg.content == 'de quem o Órbita gosta?') {
       msg.channel.send(`Só amo o <@${config.L1Id}> o resto odeio todos`);
     }
   }

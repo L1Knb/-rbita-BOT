@@ -10,16 +10,17 @@ module.exports = (client, msg) =>
 	.setThumbnail('https://i.imgur.com/6Z4L1qv.jpg')
 	.addFields(
     {name: '**prefixo**', value: '`*`'},
-    {name: '**geral**', value: '`help` `ping` `paulo guedes` `paulo kogos` `gafeu` `ciencia`'},
+    {name: '**geral**', value: '`help` `ping` `paulo guedes` `paulo kogos` `gafeu` `ciencia` `zap`'},
     {name: 'lives', value: '`orbitancap` `duduxqx` `marcikass` `egirlancap`'},
-    {name: 'mods', value: '`say`'}
-    
+    {name: 'mods', value: '`say`'},
+    {name: 'você também pode conversar com o bot digitando:', value:'`bom dia` `boa tarde` `boa noite` `oi` `F` `gabriel pereira` `bolsonaro` '},
+    {name: '+18', value: '`mamar @user`'}
 	)
 	.setTimestamp()
 	.setFooter('Órbita Server - BOT made by L1');
 
   msg.reply(avisoEmbed);
 
-  //
+  
   
 };

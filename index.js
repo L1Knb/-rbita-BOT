@@ -25,11 +25,8 @@ client.on("ready", () =>{
 
   let atividade =
   [
-    `Use ${config.prefix}help para ajuda com comandos`,
-    `A mãe do Gafeu enquanto jogo ele pela janela`,
-    `Ancapistão`,
-    `Brasil macetando japão`,
-    `OLHA O GOL OLHA O GOL OLHA O GOOOOOOOOOOOOOOOOOOOOLLLLLL`
+    `Use ${config.prefix}help para ajuda com comandos`
+  
   ],
   i = 0;
   setInterval ( () =>
