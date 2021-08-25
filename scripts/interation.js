@@ -128,6 +128,18 @@ module.exports = async (client, msg) => {
      if (msg.content == 'de quem o Órbita gosta?') {
       msg.channel.send(`Só amo o <@${config.L1Id}> o resto odeio todos`);
     }
+
+    /*else {
+      const tam = msg.content.length;
+      console.log(tam);
+      menssagem = msg.content.substring(tam-2);
+      console.log(menssagem);
+      if(menssagem == 'ão')
+      {
+        msg.channel.send('meu pau na sua mão');
+      }
+    }*/
+
   }
 });
 
